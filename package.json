@@ -1,0 +1,17 @@
+{
+  "name": "device-shadow-drift-detector",
+  "version": "0.0.0",
+  "description": "Compare device shadow state with reported state and desired state.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edilec/device-shadow-drift-detector"
+  }
+}
