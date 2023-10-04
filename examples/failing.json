@@ -1,0 +1,7 @@
+{
+  "schemaVersion": "1",
+  "complete": true,
+  "desired": [{ "field": "opaque-lamp", "owner": "controller", "version": 2, "at": 20, "op": "set", "value": true }],
+  "reported": [{ "field": "opaque-lamp", "owner": "controller", "version": 1, "at": 20, "op": "set", "value": true }],
+  "observed": [{ "field": "opaque-lamp", "owner": "controller", "version": 2, "at": 20, "op": "set", "value": true }]
+}
