@@ -8,7 +8,7 @@ import { detectDrift, LIMITS, parseStrictJson } from '../src/index.mjs';
 
 const entry = (field = 'lamp', version = 2, at = 20, op = 'set', value = true, owner = 'controller') => ({ field, owner, version, at, op, ...(op === 'set' ? { value } : {}) });
 const doc = (desired = [entry()], reported = [entry()], observed = [entry()]) => ({ schemaVersion: '1', complete: true, desired, reported, observed });
-const run = (root, input) => spawnSync(process.execPath, ['bin/device-shadow-drift-detector.mjs', '--root', root, '--input', input], { cwd: new URL('..', import.meta.url), encoding: 'utf8', env: { ...process.env, NODE_OPTIONS: `--import=${new URL('../../migration-plan-template/support/deny-network.mjs', import.meta.url).href}` } });
+const run = (root, input) => spawnSync(process.execPath, ['bin/device-shadow-drift-detector.mjs', '--root', root, '--input', input], { cwd: new URL('..', import.meta.url), encoding: 'utf8', env: { ...process.env, NODE_OPTIONS: `--import=${new URL('./deny-network.mjs', import.meta.url).href}` } });
 
 test('good matching desired, reported, observed field is reconciled', () => {
   const r = detectDrift(doc()); assert.equal(r.status, 'pass'); assert.equal(r.summary.checked, 1);
